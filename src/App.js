@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          https://github.com/BenjaminGagnolo/reactappgagnolo.git HOLA 
+          https://github.com/BenjaminGagnolo/reactappgagnolo.git
         </a>
       </header>
     </div>
