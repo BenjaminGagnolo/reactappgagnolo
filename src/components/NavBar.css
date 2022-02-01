@@ -1,0 +1,11 @@
+.NavBar{
+    background-color: rgb(rgb(0, 195, 255), rgb(0, 195, 255), rgb(0, 195, 255)) ;
+}
+.buttonNav{
+    justify-content: space-around;
+    height: 30px;
+    
+    display: flex;
+    margin: 20px;
+    
+}
