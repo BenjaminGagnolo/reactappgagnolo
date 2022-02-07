@@ -85,14 +85,8 @@
     margin-right: 100px;
     
 }
-.Titulo{
-    bottom: 68px;
-    color:  rgb(43, 150, 199);
-    position: relative;
-    left: 550px;
-    font-size: 30px;
-   
-}
+
+
 
   @media screen and (max-width: 600px) {
     .topnav a:not(:first-child), .dropdown .dropbtn {
