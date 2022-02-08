@@ -1,0 +1,11 @@
+.Ofertas{
+        
+        overflow: visible;
+        margin-left: 108px;
+        float: left;
+        height: auto;     
+}
+#nombre_img{
+   background-color: rgb(43, 150, 199);
+   border-radius: 50px;
+}

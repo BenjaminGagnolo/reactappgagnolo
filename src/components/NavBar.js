@@ -1,6 +1,6 @@
-import './NavBar.css'
-import {BsCart4} from "react-icons/bs"
-import CartWidget from './CartWidget/CartWidget'
+import './NavBar.css';
+import {BsCart4} from "react-icons/bs";
+import CartWidget from './CartWidget/CartWidget';
 
 import button from './button/button'
 
@@ -23,12 +23,14 @@ function NavBar() {
             <a href="#">Remeras</a>
             <a href="#">Pantalones</a>
             <a href="#">Calzado</a>
+            <a href="#">Ofertas</a>
           </div>
         </div>
         <a href="#">Sobre Nosotros</a>
         <a href="#" id='carrito '><BsCart4 /></a>
       </div>
       <CartWidget />
+      
       </>
       ) 
 }
