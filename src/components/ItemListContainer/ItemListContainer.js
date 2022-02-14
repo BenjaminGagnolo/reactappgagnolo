@@ -3,6 +3,12 @@ import Pantalones from "./Pantalones.png";
 import Zapas from "./Zapas.png";
 import './ItemListContainer.css';
 import ItemCount from "../ItemCount/ItemCount";
+import { useEffect } from "react";
+import { getProducts } from "../ItemList/ItemList";
+
+
+
+
 
 const functionOnAdd = (count) => {
   console.log(`Se agregaron ${count} productos al carrito`)
@@ -16,12 +22,22 @@ const ItemListContainer = [
 
 
 function ItemListContainerF(){
+
+
+  useEffect(() =>{
+    getProducts().then(products =>{
+      console.log(products); 
+    })
+  }, [])
+
+
+  
   return(
     ItemListContainer.map(e => { 
        return(
          <div className="Ofertas" key={e.id}>
               <h3 id="nombre_img" >{e.producto}</h3>
-              <img  src={e.img}></img>
+              <img  src={e.img} alt="Products"></img>
              <ItemCount stock={5} initial={0} onAdd={functionOnAdd} />
         </div> 
         )
