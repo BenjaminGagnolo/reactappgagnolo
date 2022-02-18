@@ -1,24 +1,19 @@
+import Item from "../Item/Item";
 
 
- const products = /*= () => {
-    return(*/ [
-        {id :1, producto: "Remeras", tipo: "deportiva"},
-        {id :2, producto: "Pantalones", tipo: "deportiva"},
-        {id :3, producto: "Calzado", tipo: "deportiva"}
-     ]/*) 
- }*/
+function ItemList({items}){
 
- const getProducts = () =>{
+  return(
+   
+     
+     items.map(producto => { 
 
-    return new Promise((resolve) =>{
-        setTimeout(() =>{
-        resolve(products)
-        },5000)
-    }
-    )}
+        return(
+            <Item props={producto}/>
+         )
+   }    
+   )
+  )
+  }
 
-
-
-    export default products;
-    export  {getProducts};
-    
+  export default ItemList;
