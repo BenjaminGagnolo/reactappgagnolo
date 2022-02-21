@@ -4,15 +4,15 @@ const ItemDetail = ({ products }) => {
         <article className="CardItem">
             <header className="Header">
                 <h2 className="ItemHeader">
-                    {products?.name}
+                    {products?.producto}
                 </h2>
             </header>
             <picture>
-                <img src={products?.img} alt={products?.name} className="ItemImg"/>
+                <img src={products?.img} alt={products?.producto} className="ItemImg"/>
             </picture>
             <section>
                 <p className="Info">
-                    Categoria: {products?.category}
+                    Categoria: {products?.producto}
                 </p>
                 <p className="Info">
                     Descripción: {products?.description}
