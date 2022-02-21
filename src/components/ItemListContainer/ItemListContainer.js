@@ -1,30 +1,19 @@
-
 import { useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
-import ItemCount from "../ItemCount/ItemCount";
 import { useEffect } from "react";
 import { Products } from "../Products/Products";
-
-
-
-
 
 const functionOnAdd = (count) => {
   console.log(`Se agregaron ${count} productos al carrito`)
 }
 
-/*const ItemListContainer = [
-   {id :1, producto: "Remeras", img: Remeras2},
-   {id :2, producto: "Pantalones", img: Pantalones},
-   {id :3, producto: "Calzado", img: Zapas}
-]*/
 const getProducts = ({Products}) =>{
 
   return new Promise((resolve) =>{
       setTimeout(() =>{
       resolve(Products)
-      },5000)
+      },2000)
   }
   )}
 
@@ -65,5 +54,6 @@ const [productos, setProductos] = useState([])
   }
    
 export default ItemListContainerF;
+export {getProducts}; 
 
 
