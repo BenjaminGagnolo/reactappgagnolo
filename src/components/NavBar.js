@@ -1,11 +1,7 @@
 import './NavBar.css';
 import {BsCart4} from "react-icons/bs";
 import CartWidget from './CartWidget/CartWidget';
-
-
-
-
-
+import { NavLink } from 'react-router-dom'
 
 function NavBar() {
   return(

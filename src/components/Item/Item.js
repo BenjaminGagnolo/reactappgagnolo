@@ -18,3 +18,4 @@ function Item({props}){
   }
 
 export default Item;
+export {functionOnAdd};

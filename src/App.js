@@ -10,10 +10,11 @@ function App() {
       <NavBar />
     <div><h1><center>Ofertas</center></h1></div>
       <ItemListContainerF />
-      <ItemDetailContainer />
+     
     </div>
   );
 }
 
 
 export default App;
+//<ItemDetailContainer />

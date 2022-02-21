@@ -39,17 +39,7 @@ const [productos, setProductos] = useState([])
     ):("Cargando..." )}
     
     </>
-   
-   /*ItemListContainer.map(e => { 
-       return(
-         <div className="Ofertas" key={e.id}>
-              <h3 id="nombre_img" >{e.producto}</h3>
-              <img  src={e.img} alt="Products"></img>
-             <ItemCount stock={5} initial={0} onAdd={functionOnAdd} />
-        </div> 
-        )
-  }    
-  )*/
+
   )
   }
    
