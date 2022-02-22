@@ -1,19 +1,14 @@
 import Item from "../Item/Item";
 
 
-function ItemList({items}){
-
-  return(
-   
-     
-     items.map(producto => { 
+function ItemList( { products  } ){
 
         return(
-            <Item props={producto}/>
+         <ul>
+               {products.map(product => <Item key={product.id} product={product}/>)}
+         </ul>
          )
-   }    
-   )
-  )
+   
   }
 
   export default ItemList;

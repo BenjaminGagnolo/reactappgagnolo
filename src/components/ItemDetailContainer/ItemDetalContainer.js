@@ -1,30 +1,49 @@
 import './ItemDetailContainer.css'
 import { useState, useEffect } from 'react'
 import ItemDetail from "./ItemDetail.js"
-import { getProducts} from "../ItemListContainer/ItemListContainer"
+import { getProduct } from '../Products/Products'
 import { useParams } from 'react-router-dom'
-import { Products } from '../Products/Products'
+
 
 const ItemDetailContainer = ({}) => {
-    const [Products, setProduct] = useState([])
+    const [product, setProduct] = useState()
+    const [loading, setLoading] = useState(true)
+
+
     const { productId } = useParams()
     
 
     useEffect(() => {
-        getProducts(Products).then(item => {
+        getProduct(productId).then(item => {
             setProduct(item)
-        })
-        return (() => {
-            setProduct()
+        }).catch(err  => {
+            console.log(err)
+        }).finally(() => {
+            setLoading(false)
         })
 
-    }, [])
+
+        return (() => {
+
+            setProduct()
+
+        })
+
+    }, [productId])
+    
 
 
     return (
         <div className="ItemDetailContainer" >
-            <ItemDetail  Products={Products}/>
+            {
+                loading? 
+                        <h1>Cargando...</h1>:
+                product?
+                    <ItemDetail  product={product}/>:
+                    <h1>No fue posible encontrar el producto</h1>
+            }
+            
         </div>
     )    
 }
-export default ItemDetailContainer
+export default ItemDetailContainer;

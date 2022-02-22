@@ -3,12 +3,42 @@ import Pantalones from "./Pantalones.png";
 import Zapas from "./Zapas.png";
 
 
-
-const Products = [
-    {id :1, producto: "Remeras", img: Remeras2, price: "200", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus."},
-    {id :2, producto: "Pantalones", img: Pantalones, Price: "400", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus."},
-    {id :3, producto: "Calzado", img: Zapas, Price:"500", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus."}
+export const Products = [
+    {id :1, producto: "Remeras", img: Remeras2, price: "200", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus.", stock: 5},
+    {id :2, producto: "Pantalones", img: Pantalones, price: "400", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus." , stock: 5},
+    {id :3, producto: "Calzado", img: Zapas, price:"500", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus.", stock: 5}
  ]
 
- export {Products};
- 
+
+
+export const categories = [
+    {id: 'remeras', description: 'remeras'},
+    {id: 'pantalones', description: 'pantalones'},
+    {id: 'calzado', description: 'calzado'}
+]
+
+export const getProducts = (idCategory) => {
+    return new Promise ((resolve) => {
+        const productsToResolve = idCategory ? Products.filter(item => item.category === idCategory) : Products
+        setTimeout(() => {
+            resolve(productsToResolve);
+        },2000);
+    });
+}
+
+export const getProduct = (id) => {
+    return new Promise((resolve) => {
+        const prod = Products.find(pr => pr.id === parseInt(id))
+        setTimeout(() => {
+            resolve(prod)
+        }, 1000)
+    })
+}
+
+export const getCategories = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(categories)
+        }, 1000)
+    })
+}

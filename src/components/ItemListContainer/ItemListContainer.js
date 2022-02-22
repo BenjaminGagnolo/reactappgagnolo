@@ -1,49 +1,44 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
-import { useEffect } from "react";
-import { Products } from "../Products/Products";
-
-const functionOnAdd = (count) => {
-  console.log(`Se agregaron ${count} productos al carrito`)
-}
-
-const getProducts = ({Products}) =>{
-
-  return new Promise((resolve) =>{
-      setTimeout(() =>{
-      resolve(Products)
-      },2000)
-  }
-  )}
+import { getProducts } from '../Products/Products'
 
 function ItemListContainerF(){
-const [productos, setProductos] = useState([])
+const [products, setProducts] = useState()
+const [loading, setLoading] = useState(true)
 
   useEffect(() =>{
-    getProducts({Products}).then(Products =>{
-      console.log(Products); 
-      setProductos(Products)
+
+    getProducts().then(item =>{
+      setProducts(item) 
+    }).catch(err  => {
+      console.log(err)
+    }).finally(() => {
+      setLoading(false)
     })
-  }, [productos])
-
-
-  
+    return(() => {
+    setProducts()
+  })
+  }, [])
+ 
   return(
     <>
-    
-    {productos.length > 0 ? (
-     <div>
-     <ItemList  items={productos}/>
-    </div> 
-    ):("Cargando..." )}
-    
+    <div className='ItemListContainer'>
+    {
+             loading?
+                   <h1>Cargando...</h1>:
+             products.length ?
+                   <ItemList  items={products}/>:
+                   <h1>No fue posible encontrar el producto</h1>
+    }
+    </div>
     </>
 
   )
   }
    
 export default ItemListContainerF;
-export {getProducts}; 
+
+
 
 
