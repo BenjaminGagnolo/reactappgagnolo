@@ -17,6 +17,7 @@ const [categories, setCategories] = useState([])
 return(
       <>
       <div className="topnav" id="myTopnav">
+      <CartWidget />
         <a href="#" className="active">Inicio</a>
         <a href="#">Ofertas</a>
         <a href="#">Contacto</a>
@@ -39,7 +40,7 @@ return(
               isActive ? 'ActiveOption' : 'Option'
             }>{cat.description}</NavLink>)}
         </div>
-      <CartWidget />
+     
       
       </>
      ) 

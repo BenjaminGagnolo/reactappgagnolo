@@ -1,12 +1,8 @@
 .Titulo{
-    bottom: 68px;
+    top: -15px;
     color:  rgb(43, 150, 199);
     position: absolute;
     left: 1160px;
     font-size: 30px;
-    bottom: 595px;
+    
 }
-#Mscle{
-    top: 6px;
-    position: relative;
-  }
