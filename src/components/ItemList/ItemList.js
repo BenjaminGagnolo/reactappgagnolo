@@ -2,12 +2,12 @@ import Item from "../Item/Item";
 
 
 
-function ItemList( { product = []  } ){
-
+function ItemList( { product } ){
+     
         return(
          <div className="Ofertas">
                
-                      {product.map(p => <Item key={p.id} product={product}/>)}
+                      {product.map(p => <Item key={p.id} products={p}/>)}
                     
          </div>
              

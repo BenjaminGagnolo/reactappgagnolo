@@ -3,8 +3,11 @@ import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 import { getProducts } from '../Products/Products';
 
+
+
 function ItemListContainerF(){
-const [product, setProducts] = useState([])
+const [products, setProducts] = useState({})
+
 const [loading, setLoading] = useState(true)
 
   useEffect(() =>{
@@ -27,8 +30,8 @@ const [loading, setLoading] = useState(true)
     {
              loading?
                    <h1>Cargando...</h1>:
-             product.length ?
-                   <ItemList  product={product}/>:
+             products.length ?
+                   <ItemList  product={products}/>:
                    <h1>No fue posible encontrar el producto</h1>
     }
     </div>

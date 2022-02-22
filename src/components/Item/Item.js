@@ -1,22 +1,20 @@
-
 import { Link } from 'react-router-dom';
-import { Products } from '../Products/Products';
 
 
-function Item(  Products  ){
-
+function Item(  {products}  ){
+  console.log(products);
   return(
    
-       <div className="Ofertas" key={Products.id}>
-           <h3 id="nombre_img" >{Products.producto}</h3>
-           <img  src={Products.img} alt="Products"></img>
+       <div className="Ofertas" key={products.id}>
+           <h3 id="nombre_img" >{products.producto}</h3>
+           <img  src={products.img} alt="products"></img>
            <section>
              <p>
-               Precio: ${Products.price}
+               Precio: ${products.price}
              </p>
            </section>
           <footer>
-                <Link to={`/detail/${Products.id}`}>Ver detalle</Link>
+                <Link to={`/detail/${products.id}`}>Ver mas</Link>
           </footer>
          
      </div> 
