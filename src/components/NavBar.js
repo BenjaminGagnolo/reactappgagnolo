@@ -18,7 +18,7 @@ return(
       <>
       <div className="topnav" id="myTopnav">
       <CartWidget />
-        <a href="#" className="active">Inicio</a>
+        <a href="http://localhost:3000/" className="active">Inicio</a>
         <a href="#">Ofertas</a>
         <a href="#">Contacto</a>
         <div className="dropdown">
