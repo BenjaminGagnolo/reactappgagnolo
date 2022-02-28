@@ -11,19 +11,26 @@ export const Products = [
 
 
 
-export const categories = [
+/*export const categories = [
     {id: 'remeras', description: 'remeras'},
     {id: 'pantalones', description: 'pantalones'},
     {id: 'calzado', description: 'calzado'}
-]
+]*/
 
 export const getProducts = (idCategory) => {
-    return new Promise ((resolve) => {
-        const productsToResolve = idCategory ? Products.filter(item => item.category === idCategory) : Products
+    const promise = new Promise ((resolve) => {
+        //const productsToResolve = idCategory ? Products.filter(item => item.category === idCategory) : Products
         setTimeout(() => {
-            resolve(productsToResolve);
+            if (idCategory) {
+                resolve(Products.filter(p => p.category == idCategory))
+            }
+            else{
+               resolve(Products); 
+            }
+            
         },2000);
     });
+    return promise;
 }
 
 export const getProduct = (id) => {
@@ -35,10 +42,10 @@ export const getProduct = (id) => {
     })
 }
 
-export const getCategories = () => {
+/*export const getCategories = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(categories)
         }, 1000)
     })
-}
+}*/

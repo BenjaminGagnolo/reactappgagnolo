@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useParams } from 'react';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 import { getProducts } from '../Products/Products';
@@ -9,6 +9,9 @@ function ItemListContainerF(){
 const [products, setProducts] = useState({})
 
 const [loading, setLoading] = useState(true)
+
+
+
 
   useEffect(() =>{
 
