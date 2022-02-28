@@ -7,6 +7,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 function App() {
+
+const FuncionSubmit = (e) => {
+    e.preventDefault()
+    console.log('submit')
+  }
+
+
   return (
     <div className="App">
           <BrowserRouter>
@@ -19,6 +26,12 @@ function App() {
                 <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
               </Routes>
           </BrowserRouter>
+          
+          <form onSubmit={FuncionSubmit}>
+            <br></br>
+                  <input type="text"></input>
+                  <button type='submit'>SBM</button>
+          </form>
     </div>
  
   );

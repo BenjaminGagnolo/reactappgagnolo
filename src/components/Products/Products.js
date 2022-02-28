@@ -4,9 +4,9 @@ import Zapas from "./Zapas.png";
 
 
 export const Products = [
-    {id :1, producto: "Remeras", img: Remeras2,category:"Remeras", price: "200", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus.", stock: 5},
-    {id :2, producto: "Pantalones", img: Pantalones,category:"Pantalones", price: "400", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus." , stock: 5},
-    {id :3, producto: "Calzado", img: Zapas,category:"Calzado", price:"500", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus.", stock: 5}
+    {id :1, producto: "Remeras", img: Remeras2, category:"Remeras", price: "200", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus.", stock: 5},
+    {id :2, producto: "Pantalones", img: Pantalones, category:"Pantalones", price: "400", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus." , stock: 5},
+    {id :3, producto: "Calzado", img: Zapas, category:"Calzado", price:"500", description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, doloribus.", stock: 5}
  ]
 
 

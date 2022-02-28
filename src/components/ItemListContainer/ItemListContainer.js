@@ -26,7 +26,7 @@ const [loading, setLoading] = useState(true)
  
   return(
     <>
-    <div className='ItemListContainer'>
+    <div className='ItemListContainer' onClick={() => console.log("se hizo click en ItmLC")}>
     {
              loading?
                    <h1>Cargando...</h1>:
