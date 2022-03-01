@@ -22,16 +22,12 @@ const FuncionSubmit = (e) => {
                 <Route exact path='/' element={<div><h1>Ofertas</h1>
                 <div><ItemListContainerF /></div></div>}/>
                 <Route exact path='/about'/>
-                <Route path='/category/${product.category}' element={<ItemListContainerF />}/>
+                <Route path='/category/:id' element={<ItemListContainerF />}/>
                 <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
               </Routes>
           </BrowserRouter>
           
-          <form onSubmit={FuncionSubmit}>
-            <br></br>
-                  <input type="text"></input>
-                  <button type='submit'>SBM</button>
-          </form>
+          
     </div>
  
   );

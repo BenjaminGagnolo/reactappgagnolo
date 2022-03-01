@@ -22,10 +22,10 @@ export const getProducts = (idCategory) => {
         //const productsToResolve = idCategory ? Products.filter(item => item.category === idCategory) : Products
         setTimeout(() => {
             if (idCategory) {
-                resolve(Products.filter(p => p.category == idCategory))
+            resolve(Products.filter(p => p.category === idCategory))
             }
             else{
-               resolve(Products); 
+            resolve(Products); 
             }
             
         },2000);

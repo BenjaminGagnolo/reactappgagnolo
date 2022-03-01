@@ -26,10 +26,11 @@ return(
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <NavLink to={'/category/Remeras'}><a href="#">Remeras</a></NavLink>
-            <NavLink to={'/category/Pantalones'}><a href="#">Pantalones</a></NavLink>
-            <NavLink to={'/category/Calzado'}><a href="#">Calzado</a></NavLink>
-            <a href="#">Ofertas</a>
+            <NavLink to={'/category/Remeras'}><a>Remeras</a></NavLink>
+            <NavLink to={'/category/Pantalones'}><a>Pantalones</a></NavLink>
+            <NavLink to={'/category/Calzado'}><a>Calzado</a></NavLink>
+            <NavLink to={'/'}><a>Ofertas</a></NavLink>
+
           </div>
         </div>
         <a href="#">Sobre Nosotros</a>

@@ -25,7 +25,7 @@ const increment = () => {
 
 
 return(
-        <>
+       /* <>
             <div className='ItemCount'>
             <h3>{count}</h3>
             <button onClick={decrement}>-</button>
@@ -33,7 +33,7 @@ return(
             <button onClick={(e) => onAdd(count)}>Agregar al carrito</button>
             </div>
             
-        </>
+        </>*/<div></div>
 )
 }
 export default ItemCount;
