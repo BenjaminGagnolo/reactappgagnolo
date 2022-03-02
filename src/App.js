@@ -3,7 +3,7 @@ import "./components/ItemListContainer/ItemListContainer.css";
 import NavBar from './components/NavBar';
 import ItemListContainerF from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetalContainer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -35,6 +35,10 @@ const FuncionSubmit = (e) => {
 export default App;
 
 
-
+/*<form onSubmit={FuncionSubmit}>
+            <br></br>
+                  <input type="text"></input>
+                  <button type='submit'>SBM</button>
+          </form>*/
 
 
