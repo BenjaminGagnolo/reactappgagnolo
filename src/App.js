@@ -4,18 +4,15 @@ import NavBar from './components/NavBar';
 import ItemListContainerF from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetalContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import { CartContextProvider } from './context/CartContext';
+import Cart from './components/Cart/Cart';
+import React from 'react';
 
 function App() {
 
-const FuncionSubmit = (e) => {
-    e.preventDefault()
-    console.log('submit')
-  }
-
-
   return (
     <div className="App">
+      <CartContextProvider>
           <BrowserRouter>
               <NavBar />
               <Routes>
@@ -24,8 +21,10 @@ const FuncionSubmit = (e) => {
                 <Route exact path='/about'/>
                 <Route path='/category/:id' element={<ItemListContainerF />}/>
                 <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
+                <Route path='/cart' element={<Cart />}/>
               </Routes>
           </BrowserRouter>
+      </CartContextProvider>
           
           
     </div>

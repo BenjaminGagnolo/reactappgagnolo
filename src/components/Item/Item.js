@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 
 function Item(  {products}  ){
-  console.log(products);
+  //console.log(products);
   const onAdd2 = (e) =>{
     e.stopPropagation()
     console.log("Click");

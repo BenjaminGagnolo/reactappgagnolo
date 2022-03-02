@@ -30,7 +30,7 @@ return(
             <h3>{count}</h3>
             <button onClick={decrement}>-</button>
             <button onClick={increment}>+</button><br></br>
-            <button onClick={onAdd}>Agregar al carrito</button>
+            <button onClick={() => onAdd(count)}>Agregar al carrito</button>
             </div>
             
         </>

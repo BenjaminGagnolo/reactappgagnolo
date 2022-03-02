@@ -17,6 +17,8 @@ const {id} = useParams()
 
   useEffect(() =>{
 
+    setLoading(true)
+
     getProducts().then(item =>{
       if(id){ 
         setProducts(item.filter(p => p.category === id))
@@ -32,11 +34,11 @@ const {id} = useParams()
     return(() => {
     setProducts()
   })
-  }, [])
+  }, [id])
  
   return(
     <>
-    <div className='ItemListContainer' onClick={() => console.log("se hizo click en ItmLC")}>
+    <div className='ItemListContainer'>
     {
              loading?
                    <h1>Cargando...</h1>:

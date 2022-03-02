@@ -1,15 +1,34 @@
 import './ItemDetail.css'
-import { useState } from 'react';
-
+import { useState, useContext } from 'react';
+import CartContext from '../../context/CartContext'
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 
-const ItemDetail = ( { id, producto, img, price, description, stock } ) => {
+const ItemDetail = ( { id, producto, img, price, description, stock, category } ) => {
 
 const [count , setCount] = useState(0)
 const [final, setFinal] = useState(false)
 
+const { addItem } = useContext(CartContext)
 
+const handleOnAdd = (count) => {
+    setCount(count)
+    
+    const productToAdd = {
+        id,
+        producto,
+        img,
+        price,
+        description,
+        stock,
+        cantdad : count,
+        category
+    }
+   
+    addItem(productToAdd, count)
+    setFinal(true)
+    console.log(productToAdd);
+}
 const Increment = () => {
     if (count < stock){
         setCount(count + 1)  
@@ -32,7 +51,29 @@ const Decrement = () => {
          <p><b>Detalle:<br></br></b>{description}</p>
          <img  src={img} alt="Products"></img>
          <p>${price}</p>
+         <footer className='ItemFooter'>
          {!final ? (
+         <ItemCount 
+         count = {count}
+         increment = {Increment}
+         decrement = {Decrement}
+         onAdd = {handleOnAdd}
+         
+         />
+         ) : (
+             <Link to= { '/cart' }>
+                 <button>Finalizar compra</button>
+             </Link>
+         )}
+            </footer>
+        
+        </div>
+    )
+}
+
+export default ItemDetail;
+
+/*            {!final ? (
          <ItemCount 
          count = {count}
          increment = {Increment}
@@ -44,11 +85,4 @@ const Decrement = () => {
              <Link to= { '/cart' }>
                  <button>Finalizar compra</button>
              </Link>
-         )}       
-        
-        
-        </div>
-    )
-}
-
-export default ItemDetail;
+         )}*/
