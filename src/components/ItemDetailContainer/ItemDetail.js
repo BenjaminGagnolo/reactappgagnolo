@@ -27,6 +27,7 @@ const handleOnAdd = (count) => {
    
     addItem(productToAdd, count)
     setFinal(true)
+    
     console.log(productToAdd);
 }
 const Increment = () => {
