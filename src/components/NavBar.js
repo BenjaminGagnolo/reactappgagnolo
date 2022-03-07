@@ -2,18 +2,11 @@ import './NavBar.css';
 import {BsCart4} from "react-icons/bs";
 import CartWidget from './CartWidget/CartWidget';
 import { NavLink } from 'react-router-dom'
-//import { useEffect, useState } from 'react';
-//import { getCategories } from './Products/Products';
+import { useContext } from 'react';
+import CartContext from '../context/CartContext';
 
 const NavBar = () => {
-/*const [categories, setCategories] = useState([])
-
-    useEffect(() => {
-      getCategories().then(categories => {
-          setCategories(categories)
-      })
-    }, [])*/
-
+  const { getQuantity } = useContext(CartContext)
 return(
       <>
       <div className="topnav" id="myTopnav">
@@ -34,11 +27,11 @@ return(
           </div>
         </div>
         <a href="#">Sobre Nosotros</a>
-        <a href="#" id='carrito '><BsCart4 /></a>
+       <NavLink to={' /cart '}><BsCart4 />
+       {getQuantity()}
+       </NavLink>
       </div>
-    
      
-      
       </>
      ) 
 }

@@ -28,7 +28,7 @@ const handleOnAdd = (count) => {
     addItem(productToAdd, count)
     setFinal(true)
     
-    console.log(productToAdd);
+    //console.log(productToAdd);
 }
 const Increment = () => {
     if (count < stock){
@@ -63,7 +63,7 @@ const Decrement = () => {
          />
          ) : (
              <Link to= { '/cart' }>
-                 <button>Finalizar compra</button>
+                 <button>Ir al carrito</button>
              </Link>
          )}
             </footer>
@@ -73,17 +73,3 @@ const Decrement = () => {
 }
 
 export default ItemDetail;
-
-/*            {!final ? (
-         <ItemCount 
-         count = {count}
-         increment = {Increment}
-         decrement = {Decrement}
-         onAdd = {() => setFinal(true)}
-         
-         />
-         ) : (
-             <Link to= { '/cart' }>
-                 <button>Finalizar compra</button>
-             </Link>
-         )}*/
