@@ -7,6 +7,7 @@ import CartContext from '../context/CartContext';
 
 const NavBar = () => {
   const { getQuantity } = useContext(CartContext)
+  const { cart } = useContext(CartContext)
 return(
       <>
       <div className="topnav" id="myTopnav">
@@ -27,7 +28,7 @@ return(
           </div>
         </div>
         <a href="#">Sobre Nosotros</a>
-       <NavLink to={' /cart '}><BsCart4 />
+       <NavLink to={' /cart '}>{cart.length > 0 && <BsCart4 />}
        {getQuantity()}
        </NavLink>
       </div>

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
-import { getProducts } from '../Products/Products';
+//import { getProducts } from '../Products/Products';
 import { useParams } from 'react-router-dom';
-
-
+import {getDocs, collection, query, where} from "firebase/firestore"
+import { db } from '../../services/firebase/firebase';
 
 function ItemListContainerF(){
 const [products, setProducts] = useState({})
@@ -14,12 +14,28 @@ const [loading, setLoading] = useState(true)
 const {id} = useParams()
 
 
+const collectionRef = id?
+      query(collection(db, "Products"), where("category", "==", id)) :
+      collection(db, "Products")
+
+
 
   useEffect(() =>{
 
     setLoading(true)
 
-    getProducts().then(item =>{
+    getDocs(collectionRef).then(querySnapshot => {
+      const products = querySnapshot.docs.map(doc => {
+        console.log(doc);
+        return{ id: doc.id, ...doc.data()}
+      })
+      console.log(products);
+      setProducts(products)
+    }).finally(() => {
+      setLoading(false);
+    })
+
+/*    getProducts().then(item =>{
       if(id){ 
         setProducts(item.filter(p => p.category === id))
       }else{
@@ -30,7 +46,7 @@ const {id} = useParams()
       console.log(err)
     }).finally(() => {
       setLoading(false)
-    })
+    })*/
     return(() => {
     setProducts()
   })
