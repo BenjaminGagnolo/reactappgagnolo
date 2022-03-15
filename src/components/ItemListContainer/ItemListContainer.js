@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
-//import { getProducts } from '../Products/Products';
 import { useParams } from 'react-router-dom';
+import { getProducts } from '../../services/firebase/firebase'
 import {getDocs, collection, query, where} from "firebase/firestore"
 import { db } from '../../services/firebase/firebase';
+import { useNotificationServices } from '../../services/notification/NotificationServices'
 
 function ItemListContainerF(){
 const [products, setProducts] = useState({})
@@ -13,40 +14,20 @@ const [loading, setLoading] = useState(true)
 
 const {id} = useParams()
 
-
-const collectionRef = id?
-      query(collection(db, "Products"), where("category", "==", id)) :
-      collection(db, "Products")
-
-
+const setNotification = useNotificationServices()
 
   useEffect(() =>{
 
     setLoading(true)
 
-    getDocs(collectionRef).then(querySnapshot => {
-      const products = querySnapshot.docs.map(doc => {
-        console.log(doc);
-        return{ id: doc.id, ...doc.data()}
-      })
-      console.log(products);
-      setProducts(products)
+    getProducts(id).then(response => {
+      setProducts(response)
+    }).catch((error) => {
+      setNotification('error', error)
     }).finally(() => {
       setLoading(false);
     })
 
-/*    getProducts().then(item =>{
-      if(id){ 
-        setProducts(item.filter(p => p.category === id))
-      }else{
-        setProducts(item)
-      }
-       
-    }).catch(err  => {
-      console.log(err)
-    }).finally(() => {
-      setLoading(false)
-    })*/
     return(() => {
     setProducts()
   })
