@@ -110,17 +110,6 @@ if(cart.length === 0) {
     )
 }
 
-   /*const objOrder = {
-    baryer:
-        { nane: "Benjamin",
-         phone: "3585430913",
-         adress: "Independ. 620"
-        },
-    items: cart,
-    total: getTotal(),
-    date: new Date()
-}
-console.log(objOrder);*/
 
     return (
             <div>
@@ -154,27 +143,7 @@ console.log(objOrder);*/
                 </Togglable>          
             </div>
         )
-        /*<>
-        <h1>Cart</h1>
-        {
-         cart.map(prod => {
-            return(
-                <div key={prod.id}>
-                            <card>
-                            <h3>{prod.producto}</h3>
-                            
-                            <h3>Cantidad: {prod.cantidad}</h3>
-                            <button onClick={() => handleRemoveItem(prod.id, prod.producto)}>X</button>
-                            <button inClick={() => handleClearAll()}>Limpiar Carrito</button>
-                            </card>
-                            
-                </div>
-            )
-        })   
-        }
-   
-        </>*/
-    
+ 
 }
 
 export default Cart;

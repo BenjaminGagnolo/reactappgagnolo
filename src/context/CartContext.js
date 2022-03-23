@@ -63,7 +63,7 @@ const productToAdd = {
     const getQuantity = () => {
         let cnt = 0
         cart.forEach(prod => {
-            cnt = cnt + prod.cantidad
+            cnt = cnt + prod.count
         })
         return cnt
     }
