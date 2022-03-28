@@ -12,18 +12,18 @@ return(
       <>
       <div className="topnav" id="myTopnav">
       <CartWidget />
-        <a href="http://localhost:3000/" className="active">Inicio</a>
-        <a href="#">Ofertas</a>
-        <a href="#">Contacto</a>
+        <NavLink to={'/'}>Inicio</NavLink>
+        <a>Ofertas</a>
+        <a>Contacto</a>
         <div className="dropdown">
           <button className="dropbtn">Prendas
             <i className="fa fa-caret-down"></i>
           </button>
           <div className="dropdown-content">
-            <NavLink to={'/category/Remeras'}><a>Remeras</a></NavLink>
-            <NavLink to={'/category/Pantalones'}><a>Pantalones</a></NavLink>
-            <NavLink to={'/category/Calzado'}><a>Calzado</a></NavLink>
-            <NavLink to={'/'}><a>Ofertas</a></NavLink>
+            <NavLink to={'/category/Remeras'}>Remeras</NavLink>
+            <NavLink to={'/category/Pantalones'}>Pantalones</NavLink>
+            <NavLink to={'/category/Calzado'}>Calzado</NavLink>
+            <NavLink to={'/'}>Ofertas</NavLink>
 
           </div>
         </div>
