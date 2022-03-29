@@ -13,7 +13,6 @@ return(
       <div className="topnav" id="myTopnav">
       <CartWidget />
         <NavLink to={'/'}>Inicio</NavLink>
-        <a>Ofertas</a>
         <a>Contacto</a>
         <div className="dropdown">
           <button className="dropbtn">Prendas
@@ -39,10 +38,3 @@ return(
 
 
 export default NavBar;
-
-
-/*<div className="Categories">
-{categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`} className={({ isActive }) =>
-    isActive ? 'ActiveOption' : 'Option'
-  }>{cat.description}</NavLink>)}
-</div>*/

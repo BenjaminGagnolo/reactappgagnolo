@@ -1,11 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 import { useParams } from 'react-router-dom';
-import { getProducts } from '../../services/firebase/firebase'
-import {getDocs, collection, query, where} from "firebase/firestore"
-import { db } from '../../services/firebase/firebase';
-import { useNotificationServices } from '../../services/notification/NotificationServices'
+import { getProducts } from '../../services/firebase/firebase';
+import { useNotificationServices } from '../../services/notification/NotificationServices';
 
 function ItemListContainerF(){
 const [products, setProducts] = useState({})
@@ -23,7 +21,7 @@ const setNotification = useNotificationServices()
     getProducts(id).then(response => {
       setProducts(response)
     }).catch((error) => {
-      setNotification('error', error)
+      setNotification('error',`Error buscando ${error}`)
     }).finally(() => {
       setLoading(false);
     })

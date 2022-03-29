@@ -1,12 +1,18 @@
 .Ofertas{
-        position: relative;
-        overflow: visible;
-        margin-left: 70px;
+        position: relative; 
         float: left;
         height: auto;
-             
+        margin: 30px;
+        margin-left: 45px;
+        align-items: center;
+         
+}
+.Imagenes{
+        height: 250px;
+        width: 350px;     
 }
 #nombre_img{
    background-color: rgb(43, 150, 199);
    border-radius: 50px;
+   
 }

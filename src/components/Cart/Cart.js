@@ -25,17 +25,6 @@ const contactFormRef = useRef()
 const setNotification = useNotificationServices()
 
 
-/*if (cart.length === 0) {
-    return<h2>No hay productos</h2>
-}
-const handleRemoveItem = (id, producto) => {
-        removeItem(id)
-        alert(`Se eliminó ${producto}`)
-    } 
-const handleClearAll =() =>{
-        clearCart();
-        alert(`Se eliminó carrito`)
-}*/
 
 
 const confirmOrder = () => {
@@ -67,7 +56,7 @@ if(outOfStock.length === 0) {
                 })
             } else {
                 outOfStock.forEach(prod => {
-                    setNotification('error', `No hay stock de ${prod.producto} `) //ver
+                    setNotification('error', `No hay stock de ${prod.producto} `) 
                     removeItem(prod.id)
                 })          
             }
